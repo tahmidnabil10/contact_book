@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+  <h1>Search Results</h1>
+  {% if Data %}
+    <ul class="list-group">
+      {% for contact in Data %}
+        <li class="list-group-item">{{ contact.FirstName }} {{ contact.LastName }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No results found.</p>
+  {% endif %}
+</div>
+{% endblock %}
